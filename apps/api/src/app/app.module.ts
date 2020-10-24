@@ -1,11 +1,10 @@
 import { Module } from '@nestjs/common';
-
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { ApiAuthModule } from '@post-rest/api/auth';
+import { ApiConfigModule } from '@post-rest/api/config';
+import '@post-rest/api/mappings';
+import { AutomapperModule } from 'nestjsx-automapper';
 
 @Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [AutomapperModule.withMapper(), ApiConfigModule, ApiAuthModule],
 })
 export class AppModule {}

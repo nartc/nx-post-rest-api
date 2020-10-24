@@ -33,7 +33,31 @@
     "api": {
       "tags": []
     },
-    "api-interfaces": {
+    "api-user": {
+      "tags": []
+    },
+    "api-post": {
+      "tags": []
+    },
+    "api-comment": {
+      "tags": []
+    },
+    "api-common": {
+      "tags": []
+    },
+    "api-types": {
+      "tags": []
+    },
+    "api-dtos": {
+      "tags": []
+    },
+    "api-mappings": {
+      "tags": []
+    },
+    "api-auth": {
+      "tags": []
+    },
+    "api-config": {
       "tags": []
     }
   }
