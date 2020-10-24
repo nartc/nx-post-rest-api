@@ -21,7 +21,7 @@ export class User extends Base {
   email: string;
   @prop({ required: true })
   password: string;
-  @prop({ enum: UserRole, default: UserRole.User })
+  @prop({ enum: UserRole, type: String, default: UserRole.User })
   @AutoMap()
   role: UserRole;
   @prop()

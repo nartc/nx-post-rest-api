@@ -1,7 +1,7 @@
-import { UserInformationDto } from '@post-rest/api/dtos';
 import addMilliseconds from 'date-fns/addMilliseconds';
 import parse from 'date-fns/parse';
 import ms from 'ms';
+import { UserInformationDto } from '../user/user-information.dto';
 
 export class TokenResultDto {
   token: string;

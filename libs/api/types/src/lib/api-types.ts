@@ -1,4 +1,5 @@
 import { ConfigType } from '@nestjs/config';
+// eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
 import {
   appConfiguration,
   authConfiguration,

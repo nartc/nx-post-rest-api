@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { JwtModule } from '@nestjs/jwt';
+// eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
 import { authConfiguration } from '@post-rest/api/config';
 import { AuthConfig } from '@post-rest/api/types';
 import { ApiUserModule } from '@post-rest/api/user';
