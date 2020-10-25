@@ -305,6 +305,20 @@
           }
         }
       }
+    },
+    "api-security": {
+      "root": "libs/api/security",
+      "sourceRoot": "libs/api/security/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/api/security/**/*.ts"]
+          }
+        }
+      }
     }
   },
   "cli": {
