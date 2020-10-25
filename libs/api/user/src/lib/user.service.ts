@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { BaseService, ModelType } from '@post-rest/api/common';
+import { BaseService, ModelType } from '@post-rest-api/common';
 import { InjectModel } from 'nestjs-typegoose';
 import { User } from './user.model';
 

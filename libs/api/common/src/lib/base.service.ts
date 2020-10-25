@@ -1,4 +1,7 @@
-import { Base } from './base.model';
+import { InternalServerErrorException } from '@nestjs/common';
+import { DocumentType, ReturnModelType } from '@typegoose/typegoose';
+import { AnyParamConstructor } from '@typegoose/typegoose/lib/types';
+import { MongoError } from 'mongodb';
 import {
   CreateQuery,
   DocumentQuery,
@@ -7,10 +10,7 @@ import {
   Types,
   UpdateQuery,
 } from 'mongoose';
-import { DocumentType, ReturnModelType } from '@typegoose/typegoose';
-import { InternalServerErrorException } from '@nestjs/common';
-import { MongoError } from 'mongodb';
-import { AnyParamConstructor } from '@typegoose/typegoose/lib/types';
+import { Base } from './base.model';
 
 type QueryList<T extends Base> = DocumentQuery<
   DocumentType<T>[],

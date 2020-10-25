@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
-import { ApiAuthModule } from '@post-rest/api/auth';
-import { ApiConfigModule, dbConfiguration } from '@post-rest/api/config';
-import '@post-rest/api/mappings';
-import { DbConfig } from '@post-rest/api/types';
-import { ApiUserModule } from '@post-rest/api/user';
+import { ApiAuthModule } from '@post-rest-api/auth';
+import { ApiConfigModule } from '@post-rest-api/config';
+import { DbConfig, dbConfiguration } from '@post-rest-api/configurations';
+import '@post-rest-api/mappings';
+import { ApiUserModule } from '@post-rest-api/user';
 import { TypegooseModule } from 'nestjs-typegoose';
 import { AutomapperModule } from 'nestjsx-automapper';
 

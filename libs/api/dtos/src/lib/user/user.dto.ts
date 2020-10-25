@@ -1,5 +1,5 @@
-import { BaseDto } from '@post-rest/api/common';
-import { UserRole } from '@post-rest/api/user';
+import { BaseDto } from '@post-rest-api/common';
+import { UserRole } from '@post-rest-api/user';
 import { AutoMap } from 'nestjsx-automapper';
 import { CommentDto } from '../comment/comment.dto';
 import { PostDto } from '../post/post.dto';

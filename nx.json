@@ -59,6 +59,9 @@
     },
     "api-config": {
       "tags": []
+    },
+    "api-configurations": {
+      "tags": []
     }
   }
 }

@@ -1,6 +1,6 @@
-import { Comment } from '@post-rest/api/comment';
-import { Base, useMongoosePlugin } from '@post-rest/api/common';
-import { User } from '@post-rest/api/user';
+import { Comment } from '@post-rest-api/comment';
+import { Base, useMongoosePlugin } from '@post-rest-api/common';
+import { User } from '@post-rest-api/user';
 import { prop, Ref } from '@typegoose/typegoose';
 import { AutoMap } from 'nestjsx-automapper';
 

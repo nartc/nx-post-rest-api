@@ -1,5 +1,4 @@
-import { Inject } from '@nestjs/common';
-import { registerAs } from '@nestjs/config';
+import { ConfigType, registerAs } from '@nestjs/config';
 
 export const appConfiguration = registerAs('app', () => ({
   host: process.env.APP_HOST || 'localhost',
@@ -8,4 +7,4 @@ export const appConfiguration = registerAs('app', () => ({
   env: process.env.NODE_ENV || 'development',
 }));
 
-export const InjectAppConfig = () => Inject(appConfiguration.KEY);
+export type AppConfig = ConfigType<typeof appConfiguration>;

@@ -1,5 +1,5 @@
 import { CreateMapFluentFunction } from '@nartc/automapper';
-import { Base, BaseDto } from '@post-rest/api/common';
+import { Base, BaseDto } from '@post-rest-api/common';
 import { ignore } from 'nestjsx-automapper';
 
 export function ignoreBaseProperties<TS extends Base, TD extends BaseDto>(

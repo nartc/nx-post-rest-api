@@ -1,4 +1,4 @@
-import { BaseDto } from '@post-rest/api/common';
+import { BaseDto } from '@post-rest-api/common';
 import { AutoMap } from 'nestjsx-automapper';
 
 export class UserInformationDto extends BaseDto {

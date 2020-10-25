@@ -1,5 +1,5 @@
-import { PostDto } from '@post-rest/api/dtos';
-import { Post } from '@post-rest/api/post';
+import { PostDto } from '@post-rest-api/dtos';
+import { Post } from '@post-rest-api/post';
 import { AutoMapper, Profile, ProfileBase } from 'nestjsx-automapper';
 
 @Profile()

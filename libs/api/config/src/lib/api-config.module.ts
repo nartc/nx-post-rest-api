@@ -1,8 +1,10 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
-import { appConfiguration } from './app.configuration';
-import { authConfiguration } from './auth.configuration';
-import { dbConfiguration } from './db.configuration';
+import {
+  appConfiguration,
+  authConfiguration,
+  dbConfiguration,
+} from '@post-rest-api/configurations';
 
 @Module({
   imports: [

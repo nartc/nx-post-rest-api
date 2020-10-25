@@ -1,7 +1,7 @@
-import { Base, useMongoosePlugin } from '@post-rest/api/common';
+import { Base, useMongoosePlugin } from '@post-rest-api/common';
+import { Post } from '@post-rest-api/post';
+import { User } from '@post-rest-api/user';
 import { prop, Ref } from '@typegoose/typegoose';
-import { Post } from '@post-rest/api/post';
-import { User } from '@post-rest/api/user';
 import { AutoMap } from 'nestjsx-automapper';
 
 @useMongoosePlugin()

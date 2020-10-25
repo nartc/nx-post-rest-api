@@ -2,6 +2,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "rootDir": ".",
+    "allowSyntheticDefaultImports": true,
     "sourceMap": true,
     "declaration": false,
     "moduleResolution": "node",
@@ -10,22 +11,51 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "typeRoots": ["node_modules/@types"],
-    "lib": ["es2017", "dom"],
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2017",
+      "dom"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@post-rest/api/user": ["libs/api/user/src/index.ts"],
-      "@post-rest/api/post": ["libs/api/post/src/index.ts"],
-      "@post-rest/api/comment": ["libs/api/comment/src/index.ts"],
-      "@post-rest/api/common": ["libs/api/common/src/index.ts"],
-      "@post-rest/api/types": ["libs/api/types/src/index.ts"],
-      "@post-rest/api/dtos": ["libs/api/dtos/src/index.ts"],
-      "@post-rest/api/mappings": ["libs/api/mappings/src/index.ts"],
-      "@post-rest/api/auth": ["libs/api/auth/src/index.ts"],
-      "@post-rest/api/config": ["libs/api/config/src/index.ts"]
+      "@post-rest-api/user": [
+        "libs/api/user/src/index.ts"
+      ],
+      "@post-rest-api/post": [
+        "libs/api/post/src/index.ts"
+      ],
+      "@post-rest-api/comment": [
+        "libs/api/comment/src/index.ts"
+      ],
+      "@post-rest-api/common": [
+        "libs/api/common/src/index.ts"
+      ],
+      "@post-rest-api/types": [
+        "libs/api/types/src/index.ts"
+      ],
+      "@post-rest-api/dtos": [
+        "libs/api/dtos/src/index.ts"
+      ],
+      "@post-rest-api/mappings": [
+        "libs/api/mappings/src/index.ts"
+      ],
+      "@post-rest-api/auth": [
+        "libs/api/auth/src/index.ts"
+      ],
+      "@post-rest-api/config": [
+        "libs/api/config/src/index.ts"
+      ],
+      "@post-rest-api/configurations": [
+        "libs/api/configurations/src/index.ts"
+      ]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }
