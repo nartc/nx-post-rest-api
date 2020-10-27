@@ -68,6 +68,9 @@
     },
     "api-models": {
       "tags": []
+    },
+    "web-api-stub": {
+      "tags": []
     }
   }
 }
