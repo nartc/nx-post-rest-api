@@ -29,7 +29,7 @@ async function bootstrap() {
     .setTitle('Post Rest API')
     .setDescription('API documentation for Post Rest')
     .setVersion('1.0.0')
-    .addServer(`${appConfig.domain}/${globalPrefix}`, 'Development API')
+    .addServer(`${appConfig.domain}`, 'Development API')
     .addBearerAuth()
     .build();
   const swaggerDoc = SwaggerModule.createDocument(app, swaggerDocOptions);

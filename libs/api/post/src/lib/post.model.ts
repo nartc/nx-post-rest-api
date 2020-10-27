@@ -9,7 +9,7 @@ export class Post extends Base {
   @prop({ required: true, minlength: 1 })
   @AutoMap()
   text: string;
-  @prop({ ref: () => User })
+  @prop({ ref: () => User, autopopulate: true })
   @AutoMap(() => User)
   author: Ref<User>;
   @prop({ ref: () => Comment, autopopulate: true, default: [] })
