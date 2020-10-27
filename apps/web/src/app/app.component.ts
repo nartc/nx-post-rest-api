@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthStateService } from '@post-rest-web/global-states';
 import { PrimeNGConfig } from 'primeng/api';
 
 @Component({
@@ -7,13 +6,9 @@ import { PrimeNGConfig } from 'primeng/api';
   template: ` <router-outlet></router-outlet>`,
 })
 export class AppComponent implements OnInit {
-  constructor(
-    private readonly primeNgConfig: PrimeNGConfig,
-    private readonly authStateService: AuthStateService
-  ) {}
+  constructor(private readonly primeNgConfig: PrimeNGConfig) {}
 
   ngOnInit() {
     this.primeNgConfig.ripple = true;
-    this.authStateService.user$.subscribe(console.log);
   }
 }

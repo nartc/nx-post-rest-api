@@ -413,6 +413,57 @@
           }
         }
       }
+    },
+    "web-post": {
+      "projectType": "library",
+      "root": "libs/web/post",
+      "sourceRoot": "libs/web/post/src",
+      "prefix": "post-rest",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web/post/src/**/*.ts"]
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss",
+          "changeDetection": "OnPush",
+          "skipTests": true,
+          "inlineTemplate": true,
+          "inlineStyle": true
+        }
+      }
+    },
+    "web-utilities": {
+      "root": "libs/web/utilities",
+      "sourceRoot": "libs/web/utilities/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web/utilities/**/*.ts"]
+          }
+        }
+      }
+    },
+    "web-types": {
+      "root": "libs/web/types",
+      "sourceRoot": "libs/web/types/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web/types/**/*.ts"]
+          }
+        }
+      }
     }
   },
   "cli": {

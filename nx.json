@@ -80,6 +80,15 @@
     },
     "web-global-states": {
       "tags": []
+    },
+    "web-post": {
+      "tags": []
+    },
+    "web-utilities": {
+      "tags": []
+    },
+    "web-types": {
+      "tags": []
     }
   }
 }

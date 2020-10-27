@@ -52,6 +52,7 @@ import { AuthService } from '../../services/auth.service';
   `,
   styles: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [AuthService]
 })
 export class SignInComponent implements OnInit {
   form = this.fb.group({

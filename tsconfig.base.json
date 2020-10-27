@@ -32,7 +32,10 @@
       "@post-rest-web/api-stub": ["libs/web/api-stub/src/index.ts"],
       "@post-rest-web/shell": ["libs/web/shell/src/index.ts"],
       "@post-rest-web/auth": ["libs/web/auth/src/index.ts"],
-      "@post-rest-web/global-states": ["libs/web/global-states/src/index.ts"]
+      "@post-rest-web/global-states": ["libs/web/global-states/src/index.ts"],
+      "@post-rest-web/post": ["libs/web/post/src/index.ts"],
+      "@post-rest-web/utilities": ["libs/web/utilities/src/index.ts"],
+      "@post-rest-web/types": ["libs/web/types/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

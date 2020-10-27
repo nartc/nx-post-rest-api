@@ -8,7 +8,18 @@ import { LayoutComponent } from './components/layout/layout.component';
   imports: [
     CommonModule,
     RouterModule.forRoot([
-      { path: '', component: LayoutComponent },
+      {
+        path: '',
+        component: LayoutComponent,
+        children: [
+          { path: '', redirectTo: 'posts', pathMatch: 'full' },
+          {
+            path: 'posts',
+            loadChildren: () =>
+              import('@post-rest-web/post').then((m) => m.WebPostModule),
+          },
+        ],
+      },
       {
         path: '',
         loadChildren: () =>
