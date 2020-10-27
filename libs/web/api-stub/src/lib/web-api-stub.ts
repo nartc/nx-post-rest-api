@@ -1117,10 +1117,7 @@ export interface LoginParamsDto {
 }
 
 export interface UserInformationDto {
-    createdAt?: Date;
-    updatedAt?: Date;
-    id?: string;
-    isActive: boolean;
+    id: string;
     username: string;
     email: string;
     name: string;

@@ -1,8 +1,10 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { BaseDto } from '@post-rest-api/common';
 import { AutoMap } from 'nestjsx-automapper';
 
-export class UserInformationDto extends BaseDto {
+export class UserInformationDto {
+  @AutoMap()
+  @ApiProperty()
+  id: string;
   @AutoMap()
   @ApiProperty()
   username: string;

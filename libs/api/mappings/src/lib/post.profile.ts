@@ -7,7 +7,7 @@ export class PostProfile extends ProfileBase {
   constructor(mapper: AutoMapper) {
     super();
     mapper
-      .createMap(Post, PostDto)
+      .createMap(Post, PostDto) // Mapping<Post, PostDto>
       .forMember(
         (d) => d.commentsCount,
         mapFrom((s) => s.comments.length)
