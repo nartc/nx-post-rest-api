@@ -71,6 +71,15 @@
     },
     "web-api-stub": {
       "tags": []
+    },
+    "web-shell": {
+      "tags": []
+    },
+    "web-auth": {
+      "tags": []
+    },
+    "web-global-states": {
+      "tags": []
     }
   }
 }

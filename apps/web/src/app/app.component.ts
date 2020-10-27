@@ -1,18 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthStateService } from '@post-rest-web/global-states';
 import { PrimeNGConfig } from 'primeng/api';
-import { of } from 'rxjs';
 
 @Component({
   selector: 'post-rest-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  template: ` <router-outlet></router-outlet>`,
 })
 export class AppComponent implements OnInit {
-  hello$ = of({ message: 'welcome to api' });
-
-  constructor(private readonly primeNgConfig: PrimeNGConfig) {}
+  constructor(
+    private readonly primeNgConfig: PrimeNGConfig,
+    private readonly authStateService: AuthStateService
+  ) {}
 
   ngOnInit() {
     this.primeNgConfig.ripple = true;
+    this.authStateService.user$.subscribe(console.log);
   }
 }
