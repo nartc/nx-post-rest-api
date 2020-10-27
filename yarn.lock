@@ -148,6 +148,15 @@
   dependencies:
     tslib "^2.0.0"
 
+"@angular/cdk@^10.2.5":
+  version "10.2.5"
+  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-10.2.5.tgz#768204ff4db1282297d15f382970f151f87434ec"
+  integrity sha512-SI/YdaxfkttG92A0uGRixyJkfTKHn0GIU+7BCSRq0d31ru3Ugfln+jr+5/xttxWr88CNPTfpGaUt0ZuSqYCzqw==
+  dependencies:
+    tslib "^2.0.0"
+  optionalDependencies:
+    parse5 "^5.0.0"
+
 "@angular/cli@~10.1.3":
   version "10.1.7"
   resolved "https://registry.yarnpkg.com/@angular/cli/-/cli-10.1.7.tgz#97782dab335fc7f5d30d78dfa5b5c0a344f91186"
@@ -1851,6 +1860,23 @@
   integrity sha512-MZPUxrmFubI36XS1DI3qmI0YdN1gks62JtFZvxR67ljjSNCeK6U08Zx4msEWOXuofgqUt6zPHSi1H9fbjR/NRA==
   dependencies:
     "@sinonjs/commons" "^1.7.0"
+
+"@swimlane/ng2-file-upload@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@swimlane/ng2-file-upload/-/ng2-file-upload-1.0.1.tgz#1f89db2540f7a926c85cea6c397fa1b6e3c204a8"
+  integrity sha512-fnkasTlwdWq/AeEnUlqvACFp3vZqYS1E6F5oowLCUfOqOog4n8GF3B0Bwl0ICfZ6KxobqIwABH2NKxxFgTpzjA==
+  dependencies:
+    tslib "^1.9.0"
+
+"@swimlane/ngx-ui@^30.1.0":
+  version "30.1.0"
+  resolved "https://registry.yarnpkg.com/@swimlane/ngx-ui/-/ngx-ui-30.1.0.tgz#64680fb6afc4817e94050418cc1f12292e0d0cc3"
+  integrity sha512-GiQ0dbS/7MLk8ZJfqturM9dFFsqBfTbJaHL5938fP48+oMMH5v9tTNEitbPEdP07Abvi5wfUiKVTr29e7ueBkw==
+  dependencies:
+    "@swimlane/ng2-file-upload" "^1.0.1"
+    mousetrap "^1.6.2"
+    normalize.css "^5.0.0"
+    tslib "^2.0.0"
 
 "@typegoose/typegoose@^7.4.1":
   version "7.4.1"
@@ -8262,6 +8288,11 @@ mongoose@^5.10.9:
     sift "7.0.1"
     sliced "1.0.1"
 
+mousetrap@^1.6.2:
+  version "1.6.5"
+  resolved "https://registry.yarnpkg.com/mousetrap/-/mousetrap-1.6.5.tgz#8a766d8c272b08393d5f56074e0b5ec183485bf9"
+  integrity sha512-QNo4kEepaIBwiT8CDhP98umTetp+JNfQYBWvC1pc6/OAibuXtRcxZ58Qz8skvEHYvURne/7R8T5VoOI7rDsEUA==
+
 move-concurrently@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/move-concurrently/-/move-concurrently-1.0.1.tgz#be2c005fda32e0b29af1f05d7c4b33214c701f92"
@@ -8423,6 +8454,13 @@ next-tick@~1.0.0:
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
   integrity sha1-yobR/ogoFpsBICCOPchCS524NCw=
 
+ngx-autosize-input@^2.3.7:
+  version "2.3.7"
+  resolved "https://registry.yarnpkg.com/ngx-autosize-input/-/ngx-autosize-input-2.3.7.tgz#8a16611f93ed454878ac79548a79c8bb6268f545"
+  integrity sha512-fB4ZCLuSq0lUVIYozna7VfWCi+ctetUwJsSJnoL9lTzkZFCjslkJxGi1DWn3qxS7p7Ghaa9M/swt1fJ3sCllgw==
+  dependencies:
+    tslib "^1.9.0"
+
 nice-try@^1.0.4:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/nice-try/-/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"
@@ -8573,6 +8611,11 @@ normalize-url@^3.0.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-3.3.0.tgz#b2e1c4dc4f7c6d57743df733a4f5978d18650559"
   integrity sha512-U+JJi7duF1o+u2pynbp2zXDW2/PADgC30f0GsHZtRh+HOcXHnw137TrNlyxxRvWW5fjKd3bcLHPxofWuCjaeZg==
+
+normalize.css@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/normalize.css/-/normalize.css-5.0.0.tgz#7cec875ce8178a5333c4de80b68ea9c18b9d7c37"
+  integrity sha1-fOyHXOgXilMzxN6Ato6pwYudfDc=
 
 npm-bundled@^1.0.1:
   version "1.1.1"
@@ -9121,7 +9164,7 @@ parse5-htmlparser2-tree-adapter@6.0.1:
   dependencies:
     parse5 "^6.0.1"
 
-parse5@5.1.1:
+parse5@5.1.1, parse5@^5.0.0:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/parse5/-/parse5-5.1.1.tgz#f68e4e5ba1852ac2cadc00f4555fff6c2abb6178"
   integrity sha512-ugq4DFI0Ptb+WWjAdOK16+u/nHfiIrcE+sh8kZMaM0WllQKLI9rOUq6c2b7cwPkXdzfQESqvoqK6ug7U/Yyzug==
