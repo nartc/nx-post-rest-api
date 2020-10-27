@@ -3,14 +3,14 @@ import {
   Injectable,
   NotFoundException,
 } from '@nestjs/common';
-import { BaseService, ModelType } from '@post-rest-api/common';
+import type { ModelType } from '@post-rest-api/common';
+import { BaseService } from '@post-rest-api/common';
 import { CommentDto, CreateCommentParamsDto } from '@post-rest-api/dtos';
-import { Post, PostService } from '@post-rest-api/post';
-import { User } from '@post-rest-api/user';
+import { Comment, Post, User } from '@post-rest-api/models';
+import { PostService } from '@post-rest-api/post';
 import { Types } from 'mongoose';
 import { InjectModel } from 'nestjs-typegoose';
 import { AutoMapper, InjectMapper } from 'nestjsx-automapper';
-import { Comment } from './comment.model';
 
 @Injectable()
 export class CommentService extends BaseService<Comment> {

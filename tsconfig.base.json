@@ -27,7 +27,8 @@
       "@post-rest-api/auth": ["libs/api/auth/src/index.ts"],
       "@post-rest-api/config": ["libs/api/config/src/index.ts"],
       "@post-rest-api/configurations": ["libs/api/configurations/src/index.ts"],
-      "@post-rest-api/security": ["libs/api/security/src/index.ts"]
+      "@post-rest-api/security": ["libs/api/security/src/index.ts"],
+      "@post-rest-api/models": ["libs/api/models/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

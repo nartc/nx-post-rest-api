@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
+import { User } from '@post-rest-api/models';
 import { TypegooseModule } from 'nestjs-typegoose';
-import { User } from './user.model';
 import { UserService } from './user.service';
 
 @Module({

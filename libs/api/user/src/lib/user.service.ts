@@ -1,7 +1,8 @@
 import { Injectable } from '@nestjs/common';
-import { BaseService, ModelType } from '@post-rest-api/common';
+import type { ModelType } from '@post-rest-api/common';
+import { BaseService } from '@post-rest-api/common';
+import { User } from '@post-rest-api/models';
 import { InjectModel } from 'nestjs-typegoose';
-import { User } from './user.model';
 
 @Injectable()
 export class UserService extends BaseService<User> {

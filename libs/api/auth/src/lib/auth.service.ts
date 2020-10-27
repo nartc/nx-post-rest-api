@@ -1,13 +1,14 @@
 import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { InjectAuthConfig } from '@post-rest-api/config';
-import { AuthConfig } from '@post-rest-api/configurations';
+import type { AuthConfig } from '@post-rest-api/configurations';
 import {
   AuthUserDto,
   TokenResultDto,
   UserInformationDto,
 } from '@post-rest-api/dtos';
-import { User, UserService } from '@post-rest-api/user';
+import { User } from '@post-rest-api/models';
+import { UserService } from '@post-rest-api/user';
 import { AutoMapper, InjectMapper } from 'nestjsx-automapper';
 import { JwtPayload } from './jwt-payload';
 

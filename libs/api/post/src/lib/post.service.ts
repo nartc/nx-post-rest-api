@@ -1,10 +1,11 @@
 import { ForbiddenException, Injectable } from '@nestjs/common';
-import { BaseService, ModelType } from '@post-rest-api/common';
+import type { ModelType } from '@post-rest-api/common';
+import { BaseService } from '@post-rest-api/common';
 import { CreatePostParamsDto, PostDto } from '@post-rest-api/dtos';
+import { Post } from '@post-rest-api/models';
 import { Types } from 'mongoose';
 import { InjectModel } from 'nestjs-typegoose';
 import { AutoMapper, InjectMapper } from 'nestjsx-automapper';
-import { Post } from './post.model';
 
 @Injectable()
 export class PostService extends BaseService<Post> {

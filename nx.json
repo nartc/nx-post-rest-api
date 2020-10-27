@@ -65,6 +65,9 @@
     },
     "api-security": {
       "tags": []
+    },
+    "api-models": {
+      "tags": []
     }
   }
 }

@@ -1,7 +1,7 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { AuthService } from '@post-rest-api/auth';
 import { InjectAuthConfig } from '@post-rest-api/config';
-import { AuthConfig } from '@post-rest-api/configurations';
+import type { AuthConfig } from '@post-rest-api/configurations';
 import {
   LoginParamsDto,
   RegisterParamsDto,

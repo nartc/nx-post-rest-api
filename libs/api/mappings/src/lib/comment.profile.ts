@@ -1,5 +1,5 @@
-import { Comment } from '@post-rest-api/comment';
 import { CommentDto } from '@post-rest-api/dtos';
+import { Comment } from '@post-rest-api/models';
 import { AutoMapper, Profile, ProfileBase } from 'nestjsx-automapper';
 
 @Profile()

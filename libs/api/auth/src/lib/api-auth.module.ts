@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { JwtModule } from '@nestjs/jwt';
-import { AuthConfig, authConfiguration } from '@post-rest-api/configurations';
+import type { AuthConfig } from '@post-rest-api/configurations';
+import { authConfiguration } from '@post-rest-api/configurations';
 import { ApiUserModule } from '@post-rest-api/user';
 import { AuthService } from './auth.service';
 import { PassportGlobalModule } from './modules';

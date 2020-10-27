@@ -1,5 +1,5 @@
 import { AuthUserDto, UserDto, UserInformationDto } from '@post-rest-api/dtos';
-import { User } from '@post-rest-api/user';
+import { User } from '@post-rest-api/models';
 import { AutoMapper, Profile, ProfileBase } from 'nestjsx-automapper';
 
 @Profile()

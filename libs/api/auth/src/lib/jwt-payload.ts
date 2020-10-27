@@ -1,4 +1,4 @@
-import { UserRole } from '@post-rest-api/user';
+import { UserRole } from '@post-rest-api/models';
 
 export interface JwtPayload {
   email: string;
