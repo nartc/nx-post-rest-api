@@ -16,7 +16,7 @@ export class AuthStateService extends RxState<AuthState> {
 
   constructor() {
     super();
-    this.hold(this.initEffect);
+    this.hold(this.storeLocalEffect);
 
     const token = localStorage.getItem('token') || '';
     if (token) {
@@ -27,7 +27,7 @@ export class AuthStateService extends RxState<AuthState> {
     }
   }
 
-  private get initEffect() {
+  private get storeLocalEffect() {
     return this.select().pipe(
       tap(({ token, user }) => {
         if (!token) {
