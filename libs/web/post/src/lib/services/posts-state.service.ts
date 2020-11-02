@@ -51,11 +51,14 @@ export class PostsStateService extends RxState<PostState> {
         }))
       )
     );
-    this.connect('posts', this.postService.like(), (oldState, value) => {
+    this.connect('posts', this.postService.toggleLike(), (oldState, value) => {
       return oldState.posts.map((post) => {
         if (post.id === value.id) return value;
         return post;
       });
+    });
+    this.connect('posts', this.postService.createPost(), (oldState, value) => {
+      return [value, ...oldState.posts];
     });
   }
 }

@@ -10,25 +10,37 @@ import { PostDto } from '@post-rest-web/api-stub';
 @Component({
   selector: 'post-rest-post-item',
   template: `
-    <div class="p-d-flex">
-      <img class="avatar" [src]="post.author.avatarUrl" alt="Author avatar" />
-      <div class="p-d-flex p-flex-column p-ml-4">
-        <h2 class="p-mb-0">{{ post.author.username }}</h2>
-        <h4 class="author-name p-my-0">({{ post.author.name }})</h4>
-      </div>
-      <small class="p-ml-auto">{{ post.updatedAt | date: 'short' }}</small>
-    </div>
+    <post-rest-item-header
+      [avatarUrl]="post.author.avatarUrl"
+      [username]="post.author.username"
+      [name]="post.author.name"
+      [updatedAt]="post.updatedAt"
+    ></post-rest-item-header>
     <p class="p-mb-0">{{ post.text }}</p>
     <hr class="divider p-my-4" />
     <div class="p-d-flex">
+      <!--      TODO(chau): this is a hack. for some reason, [class.p-button-outlined] does not work-->
       <button
+        *ngIf="post.liked"
         pButton
         pRipple
         type="button"
         icon="pi pi-heart"
         class="p-button-rounded p-button-danger"
         [class.p-button-outlined]="!post.liked"
-        [pTooltip]="post.liked ? 'Unlike' : 'Like'"
+        [pTooltip]="'Unlike'"
+        tooltipPosition="top"
+        (click)="likeToggle.emit(post.liked)"
+        [label]="post.likedByCount.toString()"
+      ></button>
+      <button
+        *ngIf="!post.liked"
+        pButton
+        pRipple
+        type="button"
+        icon="pi pi-heart"
+        class="p-button-rounded p-button-outlined p-button-danger"
+        [pTooltip]="'Like'"
         tooltipPosition="top"
         (click)="likeToggle.emit(post.liked)"
         [label]="post.likedByCount.toString()"
@@ -48,17 +60,6 @@ import { PostDto } from '@post-rest-web/api-stub';
   `,
   styles: [
     `
-      .avatar {
-        width: 6rem;
-        height: 6rem;
-        border-radius: 50%;
-        object-fit: cover;
-      }
-
-      .author-name {
-        font-weight: lighter;
-      }
-
       .divider {
         font-weight: lighter;
         opacity: 0.5;

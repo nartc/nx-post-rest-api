@@ -5,8 +5,8 @@ import {
   OnInit,
 } from '@angular/core';
 import { Router } from '@angular/router';
-import { PostsStateService } from '../../services/posts-state.service';
 import { PostService } from '../../services/post.service';
+import { PostsStateService } from '../../services/posts-state.service';
 
 @Component({
   selector: 'post-rest-post-container',
@@ -20,6 +20,9 @@ import { PostService } from '../../services/post.service';
       </p-messages>
       <div *ngIf="vm.posts.length" class="post-list p-grid">
         <div class="p-col-8 p-offset-2">
+          <post-rest-textarea-control
+            (submitClick)="onSubmitClicked($event)"
+          ></post-rest-textarea-control>
           <p-dataView [value]="vm.posts" layout="list">
             <ng-template pTemplate="listItem" let-post let-index="rowIndex">
               <post-rest-post-item
@@ -71,5 +74,9 @@ export class PostsComponent implements OnInit {
       // TODO(chau): monitor this https://github.com/rx-angular/rx-angular/issues/412
       this.router.navigate(['/posts', postId]);
     });
+  }
+
+  onSubmitClicked(text: string) {
+    this.postService.postCreate({ text });
   }
 }

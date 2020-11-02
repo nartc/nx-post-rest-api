@@ -2,6 +2,8 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AuthGuard } from '@post-rest-web/auth';
+import { WebSharedItemHeaderModule } from '@post-rest-web/shared/item-header';
+import { WebSharedTextareaControlModule } from '@post-rest-web/shared/textarea-control';
 import { LetModule } from '@rx-angular/template';
 import { SharedModule } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
@@ -41,6 +43,8 @@ import { PostsComponent } from './containers/posts/posts.component';
     RippleModule,
     TooltipModule,
     CardModule,
+    WebSharedItemHeaderModule,
+    WebSharedTextareaControlModule,
   ],
   declarations: [
     PostsComponent,

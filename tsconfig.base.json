@@ -35,7 +35,13 @@
       "@post-rest-web/global-states": ["libs/web/global-states/src/index.ts"],
       "@post-rest-web/post": ["libs/web/post/src/index.ts"],
       "@post-rest-web/utilities": ["libs/web/utilities/src/index.ts"],
-      "@post-rest-web/types": ["libs/web/types/src/index.ts"]
+      "@post-rest-web/types": ["libs/web/types/src/index.ts"],
+      "@post-rest-web/shared/item-header": [
+        "libs/web/shared/item-header/src/index.ts"
+      ],
+      "@post-rest-web/shared/textarea-control": [
+        "libs/web/shared/textarea-control/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

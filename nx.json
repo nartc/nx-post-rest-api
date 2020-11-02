@@ -89,6 +89,12 @@
     },
     "web-types": {
       "tags": []
+    },
+    "web-shared-item-header": {
+      "tags": []
+    },
+    "web-shared-textarea-control": {
+      "tags": []
     }
   }
 }
