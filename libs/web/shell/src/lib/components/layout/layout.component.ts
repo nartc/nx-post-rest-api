@@ -15,4 +15,5 @@ export class LayoutComponent {
     { label: 'Sign In', routerLink: '/sign-in' },
     { label: 'Sign Up', routerLink: '/sign-up' },
   ];
+
 }

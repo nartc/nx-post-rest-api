@@ -2,22 +2,44 @@ import { Injectable } from '@angular/core';
 import { PostController, PostDto } from '@post-rest-web/api-stub';
 import { ApiResponse } from '@post-rest-web/types';
 import { RxUtil } from '@post-rest-web/utilities';
-import { Observable } from 'rxjs';
-import { delay } from 'rxjs/operators';
-import { PostStateService } from './post-state.service';
+import { iif, Observable, Subject } from 'rxjs';
+import { mergeMap } from 'rxjs/operators';
 
-@Injectable()
+interface LikePost {
+  postId: string;
+  isLikedCurrent: boolean;
+}
+
+@Injectable({ providedIn: 'root' })
 export class PostService {
-  constructor(
-    private readonly postController: PostController,
-    private readonly postStateService: PostStateService
-  ) {
-    this.postStateService.connect('posts', this.getAllPosts());
+  private readonly $liked = new Subject<LikePost>();
+
+  constructor(private readonly postController: PostController) {}
+
+  likedClick(likePost: LikePost) {
+    this.$liked.next(likePost);
   }
 
-  private getAllPosts(): Observable<ApiResponse<PostDto[]>> {
-    return this.postController
-      .get()
-      .pipe(delay(2000), RxUtil.toApiResponse([]));
+  getAllPosts(): Observable<ApiResponse<PostDto[]>> {
+    return this.postController.get().pipe(
+      // delay(2000),
+      RxUtil.toApiResponse([])
+    );
+  }
+
+  getPost(id: string): Observable<ApiResponse<PostDto>> {
+    return this.postController.getPost(id).pipe(RxUtil.toApiResponse(null));
+  }
+
+  like() {
+    return this.$liked.pipe(
+      mergeMap(({ postId, isLikedCurrent }) =>
+        iif(
+          () => isLikedCurrent,
+          this.postController.unlike(postId),
+          this.postController.like(postId)
+        )
+      )
+    );
   }
 }

@@ -24,6 +24,8 @@ export class AuthStateService extends RxState<AuthState> {
         token,
         user: JSON.parse(localStorage.getItem('user')),
       });
+    } else {
+      this.set({ token: '' });
     }
   }
 

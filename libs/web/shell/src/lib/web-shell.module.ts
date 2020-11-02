@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { AuthGuard } from '@post-rest-web/auth';
 import { MenubarModule } from 'primeng/menubar';
 import { LayoutComponent } from './components/layout/layout.component';
 
@@ -15,6 +16,7 @@ import { LayoutComponent } from './components/layout/layout.component';
           { path: '', redirectTo: 'posts', pathMatch: 'full' },
           {
             path: 'posts',
+            canLoad: [AuthGuard],
             loadChildren: () =>
               import('@post-rest-web/post').then((m) => m.WebPostModule),
           },

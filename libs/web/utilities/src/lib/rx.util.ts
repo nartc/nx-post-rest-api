@@ -5,15 +5,26 @@ import {
 } from '@post-rest-web/types';
 import {
   isObservable,
+  MonoTypeOperatorFunction,
   Observable,
   of,
   pipe,
   throwError,
   UnaryFunction,
 } from 'rxjs';
-import { catchError, map, startWith } from 'rxjs/operators';
+import { catchError, map, startWith, tap } from 'rxjs/operators';
 
 export class RxUtil {
+  static log<T>(context?: string): MonoTypeOperatorFunction<T> {
+    return tap<T>((data) => {
+      if (context) {
+        console.log(context, data);
+      } else {
+        console.log({ data });
+      }
+    });
+  }
+
   static toApiResponse<TData>(
     initialValue: TData = null,
     errObsFactoryOrRethrow?:

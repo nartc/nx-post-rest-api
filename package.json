@@ -68,6 +68,7 @@
     "reflect-metadata": "^0.1.13",
     "rxjs": "~6.6.3",
     "swagger-ui-express": "^4.1.4",
+    "tslib": "^2.0.0",
     "zone.js": "^0.11.2"
   },
   "devDependencies": {
@@ -100,6 +101,7 @@
     "eslint-plugin-cypress": "^2.11.2",
     "jest": "26.6.1",
     "jest-preset-angular": "8.3.2",
+    "ng-packagr": "^10.1.0",
     "nswag": "^13.8.2",
     "prettier": "2.1.2",
     "ts-jest": "26.4.3",
