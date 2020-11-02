@@ -1,98 +1,50 @@
-# PostRest
+# PostRest API
 
 This project was generated using [Nx](https://nx.dev).
 
-<p align="center"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
-
 🔎 **Nx is a set of Extensible Dev Tools for Monorepos.**
 
-## Quick Start & Documentation
+This is a RestAPI clone of [Beeman's PANNG demo](https://github.com/beeman/panng-stack)
 
-[Nx Documentation](https://nx.dev/angular)
+## Prerequisite
 
-[10-minute video showing all Nx features](https://nx.dev/angular/getting-started/what-is-nx)
+- MongoDB setup with Docker, should be running on port 27017
+- (Optional) This project is using [NSwag](https://github.com/RicoSuter/NSwag) for client code generation. To run NSwag, you'd need [dotnet](https://dotnet.microsoft.com/)
 
-[Interactive Tutorial](https://nx.dev/angular/tutorial/01-create-application)
+## Quick start
 
-## Adding capabilities to your workspace
+- Clone this repo
+- `npm install`
+- `npm run start -- api` to start the API
+- `npm run start` to start the Web frontend
 
-Nx supports many plugins which add capabilities for developing different types of applications and different tools.
+## Quick links
 
-These capabilities include generating applications, libraries, etc as well as the devtools to test, and build projects as well.
+- [Frontend](http://localhost:4200)
+- [API](http://localhost:8080)
+- [SwaggerUI](http://localhost:8080/api/docs)
 
-Below are our core plugins:
+## Available commands
 
-- [Angular](https://angular.io)
-  - `ng add @nrwl/angular`
-- [React](https://reactjs.org)
-  - `ng add @nrwl/react`
-- Web (no framework frontends)
-  - `ng add @nrwl/web`
-- [Nest](https://nestjs.com)
-  - `ng add @nrwl/nest`
-- [Express](https://expressjs.com)
-  - `ng add @nrwl/express`
-- [Node](https://nodejs.org)
-  - `ng add @nrwl/node`
+- `npm run nswag`: this is to generate Client code that contains all methods targeting all endpoints exposed on SwaggerUI
 
-There are also many [community plugins](https://nx.dev/nx-community) you could add.
+## RxAngular
 
-## Generate an application
+This project utilizes [rx-angular](https://rx-angular.github.io/rx-angular/) on the Angular side. This allows for easy and light-weight state management solution (very suitable for a demo application like this)
 
-Run `ng g @nrwl/angular:app my-app` to generate an application.
+RxAngular also allows for a 100% subscribe-less **reactive** Angular application with `hold()` and `connect()`. Feel free to check out the `**-state.service.ts` to see how `RxAngular` is being implemented in this application.
 
-> You can use any of the plugins above to generate applications as well.
+## AutoMapper
 
-When using Nx, you can create multiple applications and libraries in the same workspace.
+This project is also to demo [AutoMapper in TypeScript](https://github.com/nartc/mapper). Check out the `mappings` and `dtos` directories in the `api` libs to see how `AutoMapper` is being implemented in this application.  
 
-## Generate a library
+## Improvement
 
-Run `ng g @nrwl/angular:lib my-lib` to generate a library.
+Of course, this demo isn't perfect so there are a lot of improvements to be made like error handling and loading spinners etc...
 
-> You can also use any of the plugins above to generate libraries as well.
+One of the things to improve on is to separate the **triggers** and the **effects** in `PostService`. What are **triggers** and **effects**?
 
-Libraries are sharable across libraries and applications. They can be imported from `@post-rest/mylib`.
+- triggers: Think of these as **Actions**
+- effects: API calls
 
-## Development server
-
-Run `ng serve my-app` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng g component my-component --project=my-app` to generate a new component.
-
-## Build
-
-Run `ng build my-app` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test my-app` to execute the unit tests via [Jest](https://jestjs.io).
-
-Run `nx affected:test` to execute the unit tests affected by a change.
-
-## Running end-to-end tests
-
-Run `ng e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
-
-Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
-
-## Understand your workspace
-
-Run `nx dep-graph` to see a diagram of the dependencies of your projects.
-
-## Further help
-
-Visit the [Nx Documentation](https://nx.dev/angular) to learn more.
-
-## ☁ Nx Cloud
-
-### Computation Memoization in the Cloud
-
-<p align="center"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-cloud-card.png"></p>
-
-Nx Cloud pairs with Nx in order to enable you to build and test code more rapidly, by up to 10 times. Even teams that are new to Nx can connect to Nx Cloud and start saving time instantly.
-
-Teams using Nx gain the advantage of building full-stack applications with their preferred framework alongside Nx’s advanced code generation and project dependency graph, plus a unified experience for both frontend and backend developers.
-
-Visit [Nx Cloud](https://nx.app/) to learn more.
+`connect()` and `hold()` APIs from `RxAngular` expect `Observable` so we need to have **triggers** to be able to execute actions then pipe to the actual API calls, aka **effects**. 
