@@ -35,7 +35,8 @@ export class AuthService {
     return this.$signIn.pipe(
       take(1),
       mergeMap((dto) => this.securityController.login(dto)),
-      map(({ user, token }) => ({ user, token }))
+      map(({ user, token }) => ({ user, token })),
+      tap(() => this.router.navigate(['/']))
     );
   }
 
