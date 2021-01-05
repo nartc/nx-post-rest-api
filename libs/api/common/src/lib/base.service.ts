@@ -2,24 +2,17 @@ import { InternalServerErrorException } from '@nestjs/common';
 import { DocumentType, ReturnModelType } from '@typegoose/typegoose';
 import { AnyParamConstructor } from '@typegoose/typegoose/lib/types';
 import { MongoError } from 'mongodb';
-import {
-  CreateQuery,
-  DocumentQuery,
+import { Types } from 'mongoose';
+import type {
+  DocumentDefinition,
   FilterQuery,
   Query,
-  Types,
   UpdateQuery,
 } from 'mongoose';
 import { Base } from './base.model';
 
-type QueryList<T extends Base> = DocumentQuery<
-  DocumentType<T>[],
-  DocumentType<T>
->;
-type QueryItem<T extends Base> = DocumentQuery<
-  DocumentType<T>,
-  DocumentType<T>
->;
+type QueryList<T extends Base> = Query<DocumentType<T>[], DocumentType<T>>;
+type QueryItem<T extends Base> = Query<DocumentType<T>, DocumentType<T>>;
 
 interface QueryOptions {
   lean?: boolean;
@@ -75,7 +68,7 @@ export abstract class BaseService<T extends Base> {
       .setOptions(this.getQueryOptions(options));
   }
 
-  async create(item: CreateQuery<T>): Promise<DocumentType<T>> {
+  async create(item: T | DocumentDefinition<T>): Promise<DocumentType<T>> {
     try {
       return await this.model.create(item);
     } catch (e) {
@@ -115,13 +108,9 @@ export abstract class BaseService<T extends Base> {
       .setOptions(this.getQueryOptions(options));
   }
 
-  count(filter: FilterQuery<DocumentType<T>> = {}): Query<number> {
-    return this.model.count(filter);
-  }
-
   async countAsync(filter: FilterQuery<DocumentType<T>> = {}): Promise<number> {
     try {
-      return await this.count(filter);
+      return await this.model.count(filter).exec();
     } catch (e) {
       BaseService.throwMongoError(e);
     }

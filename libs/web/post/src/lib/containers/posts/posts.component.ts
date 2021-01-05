@@ -11,7 +11,7 @@ import { PostsStateService } from '../../services/posts-state.service';
 @Component({
   selector: 'post-rest-post-container',
   template: `
-    <ng-container *rxLet="vm$; let vm; suspense: suspense">
+    <ng-container *rxLet="vm$; let vm; rxSuspense: suspense">
       <p-progressSpinner *ngIf="vm.isLoading"></p-progressSpinner>
       <p-messages *ngIf="vm.error" severity="error">
         <ng-template pTemplate>
@@ -20,9 +20,9 @@ import { PostsStateService } from '../../services/posts-state.service';
       </p-messages>
       <div *ngIf="vm.posts.length" class="post-list p-grid">
         <div class="p-col-8 p-offset-2">
-          <post-rest-textarea-control
-            (submitClick)="onSubmitClicked($event)"
-          ></post-rest-textarea-control>
+      <post-rest-textarea-control
+        (submitClick)="onSubmitClicked($event)"
+      ></post-rest-textarea-control>
           <p-dataView [value]="vm.posts" layout="list">
             <ng-template pTemplate="listItem" let-post let-index="rowIndex">
               <post-rest-post-item
