@@ -22,7 +22,7 @@ export class User extends Base {
   @prop({ required: true })
   password: string;
   @prop({ enum: UserRole, type: String, default: UserRole.User })
-  @AutoMap()
+  @AutoMap(() => String)
   role: UserRole;
   @prop()
   @AutoMap()

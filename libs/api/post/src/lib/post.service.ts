@@ -66,6 +66,7 @@ export class PostService extends BaseService<Post> {
     const updated: Post = await this.updateBy(id, {
       $addToSet: { likedBy: Types.ObjectId(userId) },
     }).exec();
+    console.log(updated)
     return this.mapper.map(updated, PostDto, Post);
   }
 
