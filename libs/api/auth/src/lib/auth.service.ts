@@ -1,3 +1,5 @@
+import { InjectMapper } from '@automapper/nestjs';
+import type { Mapper } from '@automapper/types';
 import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { InjectAuthConfig } from '@post-rest-api/config';
@@ -9,13 +11,12 @@ import {
 } from '@post-rest-api/dtos';
 import { User } from '@post-rest-api/models';
 import { UserService } from '@post-rest-api/user';
-import { AutoMapper, InjectMapper } from 'nestjsx-automapper';
 import { JwtPayload } from './jwt-payload';
 
 @Injectable()
 export class AuthService {
   constructor(
-    @InjectMapper() private readonly mapper: AutoMapper,
+    @InjectMapper() private readonly mapper: Mapper,
     @InjectAuthConfig() private readonly authConfig: AuthConfig,
     private readonly jwtService: JwtService,
     private readonly userService: UserService

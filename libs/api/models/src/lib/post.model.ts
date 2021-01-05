@@ -1,6 +1,6 @@
+import { AutoMap } from '@automapper/classes';
 import { Base, useMongoosePlugin } from '@post-rest-api/common';
 import { prop, Ref } from '@typegoose/typegoose';
-import { AutoMap } from 'nestjsx-automapper';
 import { Comment } from './comment.model';
 import { User } from './user.model';
 

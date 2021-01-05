@@ -1,3 +1,5 @@
+import { InjectMapper } from '@automapper/nestjs';
+import type { Mapper } from '@automapper/types';
 import { ForbiddenException, Injectable } from '@nestjs/common';
 import type { ModelType } from '@post-rest-api/common';
 import { BaseService } from '@post-rest-api/common';
@@ -5,13 +7,12 @@ import { CreatePostParamsDto, PostDto } from '@post-rest-api/dtos';
 import { Post } from '@post-rest-api/models';
 import { Types } from 'mongoose';
 import { InjectModel } from 'nestjs-typegoose';
-import { AutoMapper, InjectMapper } from 'nestjsx-automapper';
 
 @Injectable()
 export class PostService extends BaseService<Post> {
   constructor(
     @InjectModel(Post) private readonly postModel: ModelType<Post>,
-    @InjectMapper() private readonly mapper: AutoMapper
+    @InjectMapper() private readonly mapper: Mapper
   ) {
     super(postModel);
   }
@@ -37,7 +38,7 @@ export class PostService extends BaseService<Post> {
 
   async getPost(id: string): Promise<PostDto> {
     const post = await this.findById(id).exec();
-    return this.mapper.map<Post>(post, PostDto, Post);
+    return this.mapper.map<Post, PostDto>(post, PostDto, Post);
   }
 
   async createPost(userId: string, dto: CreatePostParamsDto): Promise<PostDto> {

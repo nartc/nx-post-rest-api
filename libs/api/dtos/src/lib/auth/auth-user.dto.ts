@@ -1,6 +1,6 @@
+import { AutoMap } from '@automapper/classes';
 import { BaseDto } from '@post-rest-api/common';
 import { UserRole } from '@post-rest-api/models';
-import { AutoMap } from 'nestjsx-automapper';
 
 export class AuthUserDto extends BaseDto {
   @AutoMap()

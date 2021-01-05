@@ -1,5 +1,5 @@
+import { AutoMap } from '@automapper/classes';
 import { ApiProperty } from '@nestjs/swagger';
-import { AutoMap } from 'nestjsx-automapper';
 
 export class UserInformationDto {
   @AutoMap()

@@ -1,3 +1,5 @@
+import { InjectMapper } from '@automapper/nestjs';
+import type { Mapper } from '@automapper/types';
 import {
   ForbiddenException,
   Injectable,
@@ -10,13 +12,12 @@ import { Comment, Post, User } from '@post-rest-api/models';
 import { PostService } from '@post-rest-api/post';
 import { Types } from 'mongoose';
 import { InjectModel } from 'nestjs-typegoose';
-import { AutoMapper, InjectMapper } from 'nestjsx-automapper';
 
 @Injectable()
 export class CommentService extends BaseService<Comment> {
   constructor(
     @InjectModel(Comment) private readonly commentModel: ModelType<Comment>,
-    @InjectMapper() private readonly mapper: AutoMapper,
+    @InjectMapper() private readonly mapper: Mapper,
     private readonly postService: PostService
   ) {
     super(commentModel);

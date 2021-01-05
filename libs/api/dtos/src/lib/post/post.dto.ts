@@ -1,6 +1,6 @@
+import { AutoMap } from '@automapper/classes';
 import { ApiProperty } from '@nestjs/swagger';
 import { BaseDto } from '@post-rest-api/common';
-import { AutoMap } from 'nestjsx-automapper';
 import { CommentDto } from '../comment/comment.dto';
 import { UserInformationDto } from '../user/user-information.dto';
 

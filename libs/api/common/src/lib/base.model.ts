@@ -1,6 +1,6 @@
+import { AutoMap } from '@automapper/classes';
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 import { modelOptions, prop, Severity } from '@typegoose/typegoose';
-import { AutoMap } from 'nestjsx-automapper';
 
 @modelOptions({
   options: { allowMixed: Severity.ALLOW },
