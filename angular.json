@@ -42,7 +42,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -60,7 +59,8 @@
                 }
               ]
             }
-          }
+          },
+          "outputs": ["{options.outputPath}"]
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -83,7 +83,10 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/web/src/**/*.ts"]
+            "lintFilePatterns": [
+              "apps/web/src/**/*.ts",
+              "apps/web/src/**/*.html"
+            ]
           }
         },
         "test": {
@@ -91,7 +94,8 @@
           "options": {
             "jestConfig": "apps/web/jest.config.js",
             "passWithNoTests": true
-          }
+          },
+          "outputs": ["coverage/apps/web"]
         }
       }
     },
@@ -149,7 +153,8 @@
                 }
               ]
             }
-          }
+          },
+          "outputs": ["{options.outputPath}"]
         },
         "serve": {
           "builder": "@nrwl/node:execute",
@@ -168,7 +173,8 @@
           "options": {
             "jestConfig": "apps/api/jest.config.js",
             "passWithNoTests": true
-          }
+          },
+          "outputs": ["coverage/apps/api"]
         }
       }
     },
@@ -349,7 +355,10 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/web/api-stub/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/web/api-stub/**/*.ts",
+              "libs/web/api-stub/src/**/*.html"
+            ]
           }
         }
       }
@@ -363,7 +372,10 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/web/shell/src/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/web/shell/src/**/*.ts",
+              "libs/web/shell/src/**/*.html"
+            ]
           }
         }
       },
@@ -386,7 +398,10 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/web/auth/src/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/web/auth/src/**/*.ts",
+              "libs/web/auth/src/**/*.html"
+            ]
           }
         }
       },
@@ -409,7 +424,10 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/web/global-states/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/web/global-states/**/*.ts",
+              "libs/web/global-states/src/**/*.html"
+            ]
           }
         }
       }
@@ -423,7 +441,10 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/web/post/src/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/web/post/src/**/*.ts",
+              "libs/web/post/src/**/*.html"
+            ]
           }
         }
       },
@@ -474,7 +495,10 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/web/shared/item-header/src/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/web/shared/item-header/src/**/*.ts",
+              "libs/web/shared/item-header/src/**/*.html"
+            ]
           }
         }
       },
@@ -493,7 +517,10 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/web/shared/textarea-control/src/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/web/shared/textarea-control/src/**/*.ts",
+              "libs/web/shared/textarea-control/src/**/*.html"
+            ]
           }
         }
       },

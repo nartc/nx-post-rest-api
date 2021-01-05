@@ -9,25 +9,23 @@ import { LayoutComponent } from './components/layout/layout.component';
   imports: [
     CommonModule,
     RouterModule.forRoot([
-      {
+    {
         path: '',
         component: LayoutComponent,
         children: [
-          { path: '', redirectTo: 'posts', pathMatch: 'full' },
-          {
-            path: 'posts',
-            canLoad: [AuthGuard],
-            loadChildren: () =>
-              import('@post-rest-web/post').then((m) => m.WebPostModule),
-          },
+            { path: '', redirectTo: 'posts', pathMatch: 'full' },
+            {
+                path: 'posts',
+                canLoad: [AuthGuard],
+                loadChildren: () => import('@post-rest-web/post').then((m) => m.WebPostModule),
+            },
         ],
-      },
-      {
+    },
+    {
         path: '',
-        loadChildren: () =>
-          import('@post-rest-web/auth').then((m) => m.WebAuthModule),
-      },
-    ]),
+        loadChildren: () => import('@post-rest-web/auth').then((m) => m.WebAuthModule),
+    },
+], { relativeLinkResolution: 'legacy' }),
     MenubarModule,
   ],
   declarations: [LayoutComponent],
